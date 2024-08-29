@@ -51,6 +51,7 @@ main {
 .profile-info {
     flex: 2;
     margin-right: 20px;
+    margin-left: 20px;
 }
 
 .profile-info h1 {
