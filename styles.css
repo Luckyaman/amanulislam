@@ -103,6 +103,9 @@ main {
 .news-item a:hover {
     text-decoration: underline;
 }
+.interest{
+    color:green;
+}
 
 footer {
     text-align: center;
