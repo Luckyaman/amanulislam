@@ -174,7 +174,12 @@
   <header>
     <nav>
       <!-- <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button> -->
-      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <!-- <button class="menu-toggle" onclick="toggleMenu()">☰</button> -->
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
       <ul id="nav-links">
         <li><a href="/amanulislam/index.html">About</a></li>
@@ -257,13 +262,13 @@
   </script> -->
 
   <!-- Mobile menu toggle -->
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById("nav-links");
-    menu.classList.toggle("expanded");
-    menu.classList.toggle("collapsed");
-  }
-</script>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("nav-links");
+      menu.classList.toggle("expanded");
+      menu.classList.toggle("collapsed");
+    }
+  </script>
 
 </body>
 </html>
