@@ -139,7 +139,8 @@
     footer {
       text-align: center;
       font-size: 0.9em;
-      color: #666;
+      color: white;
+      background-color: #2e7d32;
       padding: 15px 0;
     }
 
@@ -162,6 +163,10 @@
         max-height: 500px;
       }
 
+      nav ul.collapsed {
+        max-height: 0;
+      }
+
       nav ul li {
         width: 100%;
         text-align: center;
@@ -173,15 +178,8 @@
 <body>
   <header>
     <nav>
-      <!-- <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button> -->
-      <!-- <button class="menu-toggle" onclick="toggleMenu()">☰</button> -->
-      <div class="menu-toggle" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      <ul id="nav-links">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <ul id="nav-links" class="collapsed">
         <li><a href="/amanulislam/index.html">About</a></li>
         <li><a href="/amanulislam/Curriculum Vitae.html">Curriculum Vitae</a></li>
         <li><a href="/amanulislam/Publications.html">Publications</a></li>
@@ -252,16 +250,6 @@
   <script>hljs.highlightAll();</script>
 
   <!-- Toggle Mobile Menu -->
- <!--  <script>
-    const toggleButton = document.querySelector('.menu-toggle');
-    const navLinks = document.getElementById('nav-links');
-
-    toggleButton.addEventListener('click', () => {
-      navLinks.classList.toggle('expanded');
-    });
-  </script> -->
-
-  <!-- Mobile menu toggle -->
   <script>
     function toggleMenu() {
       const menu = document.getElementById("nav-links");
