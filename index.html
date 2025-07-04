@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amanul Islam - Researcher and Academic</title>
 
-  <!-- Google Fonts: Inter -->
+  <!-- Google Font: Inter -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <!-- Highlight.js CSS -->
@@ -16,39 +16,96 @@
       font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f6fa;
-      color: #2c2c2c;
+      background-color: #f9f9f9;
+      color: #222;
       line-height: 1.6;
     }
 
-    header nav ul {
+    /* Navigation */
+    header nav {
+      background-color: #4B0082; /* Deep Indigo */
+      padding: 10px 20px;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      padding: 10px;
+    }
+
+    .menu-toggle span {
+      height: 3px;
+      width: 25px;
+      background: white;
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+
+    nav ul {
       list-style: none;
       padding: 0;
       margin: 0;
-      background-color: #4B0082;
       text-align: center;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      transition: max-height 0.3s ease-out;
     }
 
-    header nav ul li {
-      margin: 10px 10px;
+    nav ul li {
+      margin: 0 10px;
     }
 
-    header nav ul li a {
-      color: #ffffff;
+    nav ul li a {
+      color: white;
       text-decoration: none;
-      font-weight: bold;
-      padding: 10px 15px;
+      font-weight: 600;
+      padding: 10px;
       display: inline-block;
     }
 
-    header nav ul li a:hover {
+    nav ul li a:hover {
       text-decoration: underline;
-      color: #a060ff;
     }
 
+    /* Collapsible menu for mobile */
+    nav ul.collapsed {
+      max-height: 0;
+      overflow: hidden;
+      flex-direction: column;
+    }
+
+    nav ul.expanded {
+      max-height: 500px;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+        margin-left: auto;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul li {
+        width: 100%;
+      }
+
+      nav ul li a {
+        width: 100%;
+        padding: 12px 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: left;
+      }
+    }
+
+    /* Main content */
     main {
       max-width: 900px;
       margin: 20px auto;
@@ -60,18 +117,15 @@
 
     .profile {
       display: flex;
-      flex-direction: row;
       gap: 20px;
       align-items: flex-start;
-      margin-bottom: 40px;
       flex-wrap: wrap;
+      margin-bottom: 40px;
     }
 
     .profile-image img {
       max-width: 180px;
       border-radius: 8px;
-      width: 100%;
-      height: auto;
     }
 
     .profile-info h1 {
@@ -117,49 +171,26 @@
 
     .news-item a:hover {
       text-decoration: underline;
-      color: #a060ff;
     }
 
     footer {
       text-align: center;
       font-size: 0.9em;
-      color: #777;
+      color: #666;
       padding: 15px 0;
-    }
-
-    /* === RESPONSIVE ADJUSTMENTS === */
-    @media (max-width: 768px) {
-      .profile {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .profile-info {
-        padding: 0 10px;
-      }
-
-      header nav ul {
-        flex-direction: column;
-        padding: 10px 0;
-      }
-
-      header nav ul li {
-        margin: 5px 0;
-      }
-
-      main {
-        margin: 10px;
-        padding: 15px;
-      }
     }
   </style>
 </head>
-
 <body>
+
   <header>
     <nav>
-      <ul>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul id="nav-links" class="collapsed">
         <li><a href="/amanulislam/index.html">About</a></li>
         <li><a href="/amanulislam/Curriculum Vitae.html">Curriculum Vitae</a></li>
         <li><a href="/amanulislam/Publications.html">Publications</a></li>
@@ -182,6 +213,7 @@
         <p>PhD Student in Security</p>
         <p>University of Colorado Colorado Springs, USA</p>
         <p>aislam2@uccs.edu</p>
+
         <p style="text-align: justify;">
           I am a dedicated researcher, academic, and software engineer with a strong background in computer science, cybersecurity, and machine learning. Hailing from Munshigonj, Bangladesh, I am currently pursuing a <strong>PhD in Security at the University of Colorado Colorado Springs, USA</strong>. My research focuses on advanced topics such as anomaly detection in 5G/6G networks using Variational Autoencoders (VAE) and anonymous networking detection in cryptocurrency. My research interests span machine learning, deep learning, cybersecurity, graphical authentication, and network security.<br /><br />
         </p>
@@ -226,8 +258,18 @@
     <p>Last updated: January 2025 © Copyright 2025 Amanul Islam.</p>
   </footer>
 
-  <!-- Highlight.js Script -->
+  <!-- Highlight.js -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
+
+  <!-- Mobile menu toggle -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("nav-links");
+      menu.classList.toggle("expanded");
+      menu.classList.toggle("collapsed");
+    }
+  </script>
+
 </body>
 </html>
