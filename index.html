@@ -4,13 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amanul Islam - Researcher and Academic</title>
-  <link rel="stylesheet" href="styles.css" />
-  <!-- Google Fonts: Fira Code -->
+
+  <!-- Google Fonts: Inter -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
   <!-- Highlight.js CSS -->
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
+
   <style>
-   body {
+    body {
       font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
@@ -18,33 +20,35 @@
       color: #2c2c2c;
       line-height: 1.6;
     }
-    
+
     header nav ul {
       list-style: none;
       padding: 0;
       margin: 0;
-      background-color: #4B0082; /* deep indigo */
+      background-color: #4B0082;
       text-align: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
-    
+
     header nav ul li {
-      display: inline;
-      margin: 0 15px;
+      margin: 10px 10px;
     }
-    
+
     header nav ul li a {
       color: #ffffff;
       text-decoration: none;
       font-weight: bold;
-      padding: 10px 0;
+      padding: 10px 15px;
       display: inline-block;
     }
-    
+
     header nav ul li a:hover {
       text-decoration: underline;
-      color: #a060ff; /* soft hover indigo */
+      color: #a060ff;
     }
-    
+
     main {
       max-width: 900px;
       margin: 20px auto;
@@ -53,35 +57,69 @@
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-    
+
+    .profile {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-items: flex-start;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .profile-image img {
+      max-width: 180px;
+      border-radius: 8px;
+      width: 100%;
+      height: auto;
+    }
+
     .profile-info h1 {
       color: #4B0082;
       margin-top: 0;
       margin-bottom: 10px;
     }
-    
+
+    .profile-info p {
+      margin: 6px 0;
+    }
+
+    .profile-info ul.interest {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+
+    .profile-info ul.interest li {
+      margin-bottom: 5px;
+    }
+
     .news h2 {
       color: #4B0082;
       margin-top: 0;
       margin-bottom: 15px;
     }
-    
+
+    .news-item {
+      margin-bottom: 15px;
+    }
+
     .news-item .date {
       font-weight: bold;
       color: #666;
       margin-bottom: 4px;
     }
-    
+
     .news-item a {
       color: #4B0082;
       text-decoration: none;
     }
-    
+
     .news-item a:hover {
       text-decoration: underline;
       color: #a060ff;
     }
-    
+
     footer {
       text-align: center;
       font-size: 0.9em;
@@ -89,8 +127,35 @@
       padding: 15px 0;
     }
 
+    /* === RESPONSIVE ADJUSTMENTS === */
+    @media (max-width: 768px) {
+      .profile {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .profile-info {
+        padding: 0 10px;
+      }
+
+      header nav ul {
+        flex-direction: column;
+        padding: 10px 0;
+      }
+
+      header nav ul li {
+        margin: 5px 0;
+      }
+
+      main {
+        margin: 10px;
+        padding: 15px;
+      }
+    }
   </style>
 </head>
+
 <body>
   <header>
     <nav>
@@ -117,7 +182,6 @@
         <p>PhD Student in Security</p>
         <p>University of Colorado Colorado Springs, USA</p>
         <p>aislam2@uccs.edu</p>
-
         <p style="text-align: justify;">
           I am a dedicated researcher, academic, and software engineer with a strong background in computer science, cybersecurity, and machine learning. Hailing from Munshigonj, Bangladesh, I am currently pursuing a <strong>PhD in Security at the University of Colorado Colorado Springs, USA</strong>. My research focuses on advanced topics such as anomaly detection in 5G/6G networks using Variational Autoencoders (VAE) and anonymous networking detection in cryptocurrency. My research interests span machine learning, deep learning, cybersecurity, graphical authentication, and network security.<br /><br />
         </p>
