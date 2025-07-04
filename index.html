@@ -173,7 +173,9 @@
 <body>
   <header>
     <nav>
-      <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+      <!-- <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button> -->
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
       <ul id="nav-links">
         <li><a href="/amanulislam/index.html">About</a></li>
         <li><a href="/amanulislam/Curriculum Vitae.html">Curriculum Vitae</a></li>
@@ -245,13 +247,23 @@
   <script>hljs.highlightAll();</script>
 
   <!-- Toggle Mobile Menu -->
-  <script>
+ <!--  <script>
     const toggleButton = document.querySelector('.menu-toggle');
     const navLinks = document.getElementById('nav-links');
 
     toggleButton.addEventListener('click', () => {
       navLinks.classList.toggle('expanded');
     });
-  </script>
+  </script> -->
+
+  <!-- Mobile menu toggle -->
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("nav-links");
+    menu.classList.toggle("expanded");
+    menu.classList.toggle("collapsed");
+  }
+</script>
+
 </body>
 </html>
