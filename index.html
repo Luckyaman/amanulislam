@@ -6,55 +6,56 @@
   <title>Amanul Islam - Researcher and Academic</title>
 
   <!-- Google Font: Inter -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <!-- Highlight.js CSS -->
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f9f9f9;
-      color: #222;
+      color: #333;
       line-height: 1.6;
     }
 
-    /* Navigation */
-    header nav {
-      background-color: #4B0082; /* Deep Indigo */
+    header {
+      background-color: #2e7d32; /* Dark Green */
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       padding: 10px 20px;
     }
 
     .menu-toggle {
       display: none;
-      flex-direction: column;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: white;
       cursor: pointer;
-      padding: 10px;
-    }
-
-    .menu-toggle span {
-      height: 3px;
-      width: 25px;
-      background: white;
-      margin: 4px 0;
-      transition: 0.4s;
     }
 
     nav ul {
       list-style: none;
       padding: 0;
       margin: 0;
-      text-align: center;
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      transition: max-height 0.3s ease-out;
-    }
-
-    nav ul li {
-      margin: 0 10px;
+      gap: 20px;
     }
 
     nav ul li a {
@@ -62,57 +63,19 @@
       text-decoration: none;
       font-weight: 600;
       padding: 10px;
-      display: inline-block;
     }
 
     nav ul li a:hover {
       text-decoration: underline;
     }
 
-    /* Collapsible menu for mobile */
-    nav ul.collapsed {
-      max-height: 0;
-      overflow: hidden;
-      flex-direction: column;
-    }
-
-    nav ul.expanded {
-      max-height: 500px;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: flex;
-        margin-left: auto;
-      }
-
-      nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav ul li {
-        width: 100%;
-      }
-
-      nav ul li a {
-        width: 100%;
-        padding: 12px 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        text-align: left;
-      }
-    }
-
-    /* Main content */
     main {
       max-width: 900px;
       margin: 20px auto;
       background: white;
       padding: 20px;
       border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     .profile {
@@ -129,7 +92,7 @@
     }
 
     .profile-info h1 {
-      color: #4B0082;
+      color: #2e7d32;
       margin-top: 0;
       margin-bottom: 10px;
     }
@@ -149,7 +112,7 @@
     }
 
     .news h2 {
-      color: #4B0082;
+      color: #388e3c;
       margin-top: 0;
       margin-bottom: 15px;
     }
@@ -160,12 +123,12 @@
 
     .news-item .date {
       font-weight: bold;
-      color: #666;
+      color: #777;
       margin-bottom: 4px;
     }
 
     .news-item a {
-      color: #4B0082;
+      color: #2e7d32;
       text-decoration: none;
     }
 
@@ -179,18 +142,39 @@
       color: #666;
       padding: 15px 0;
     }
+
+    /* Responsive styles */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        width: 100%;
+        background-color: #2e7d32;
+      }
+
+      nav ul.expanded {
+        max-height: 500px;
+      }
+
+      nav ul li {
+        width: 100%;
+        text-align: center;
+      }
+    }
   </style>
 </head>
-<body>
 
+<body>
   <header>
     <nav>
-      <div class="menu-toggle" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <ul id="nav-links" class="collapsed">
+      <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+      <ul id="nav-links">
         <li><a href="/amanulislam/index.html">About</a></li>
         <li><a href="/amanulislam/Curriculum Vitae.html">Curriculum Vitae</a></li>
         <li><a href="/amanulislam/Publications.html">Publications</a></li>
@@ -213,11 +197,9 @@
         <p>PhD Student in Security</p>
         <p>University of Colorado Colorado Springs, USA</p>
         <p>aislam2@uccs.edu</p>
-
         <p style="text-align: justify;">
-          I am a dedicated researcher, academic, and software engineer with a strong background in computer science, cybersecurity, and machine learning. Hailing from Munshigonj, Bangladesh, I am currently pursuing a <strong>PhD in Security at the University of Colorado Colorado Springs, USA</strong>. My research focuses on advanced topics such as anomaly detection in 5G/6G networks using Variational Autoencoders (VAE) and anonymous networking detection in cryptocurrency. My research interests span machine learning, deep learning, cybersecurity, graphical authentication, and network security.<br /><br />
+          I am a dedicated researcher, academic, and software engineer with a strong background in computer science, cybersecurity, and machine learning. Hailing from Munshigonj, Bangladesh, I am currently pursuing a <strong>PhD in Security at the University of Colorado Colorado Springs, USA</strong>. My research focuses on advanced topics such as anomaly detection in 5G/6G networks using Variational Autoencoders (VAE) and anonymous networking detection in cryptocurrency. My research interests span machine learning, deep learning, cybersecurity, graphical authentication, and network security.
         </p>
-
         <p><b>My research interests include:</b></p>
         <ul class="interest">
           <li>Machine Learning</li>
@@ -262,14 +244,14 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
 
-  <!-- Mobile menu toggle -->
+  <!-- Toggle Mobile Menu -->
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById("nav-links");
-      menu.classList.toggle("expanded");
-      menu.classList.toggle("collapsed");
-    }
-  </script>
+    const toggleButton = document.querySelector('.menu-toggle');
+    const navLinks = document.getElementById('nav-links');
 
+    toggleButton.addEventListener('click', () => {
+      navLinks.classList.toggle('expanded');
+    });
+  </script>
 </body>
 </html>
