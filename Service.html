@@ -3,74 +3,144 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amanul Islam - Service</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>[Page Title] - Amanul Islam</title>
 
-  <!-- Google Fonts: Fira Code -->
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
-
+  <!-- Google Font: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
   <!-- Highlight.js CSS -->
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
 
   <style>
+    :root {
+      --main-color: #1b5e20;
+      --highlight-color: #1b5e20;
+      --text-color: #333;
+      --bg-color: #f9f9f9;
+    }
+
     body {
-      font-family: 'Fira Code', monospace;
-      line-height: 1.8;
+      font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
     }
+
     header {
-      background-color: #004080;
-      color: white;
-      padding: 10px 0;
+      background-color: var(--main-color);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
+
+    nav {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+    }
+
     nav ul {
       list-style: none;
-      margin: 0;
       padding: 0;
-      text-align: center;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
     }
-    nav ul li {
-      display: inline;
-      margin: 0 15px;
-    }
+
     nav ul li a {
       color: white;
       text-decoration: none;
       font-weight: bold;
+      padding: 10px;
     }
+
     nav ul li a:hover {
       text-decoration: underline;
     }
+
     main {
-      padding: 20px;
       max-width: 900px;
       margin: 20px auto;
-      background-color: #fff;
+      background: white;
+      padding: 20px;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
+
     h3 {
-      color: #0059b3;
+      color: var(--highlight-color);
       margin-top: 30px;
+      border-bottom: 2px solid #c8e6c9;
+      padding-bottom: 5px;
     }
+
     ul {
-      margin: 15px 0;
       padding-left: 20px;
     }
+
     ul li {
-      margin-bottom: 12px;
+      margin-bottom: 15px;
     }
-    p {
-      text-align: justify;
+
+    .section-title {
+      font-weight: bold;
+      color: var(--main-color);
     }
-    .last-update {
+
+    footer {
       text-align: center;
       font-size: 0.9em;
+      color: white;
+      background-color: #2e7d32;
       padding: 15px 0;
-      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu-toggle {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        background-color: var(--main-color);
+      }
+
+      nav ul.expanded {
+        max-height: 500px;
+      }
+
+      nav ul.collapsed {
+        max-height: 0;
+      }
+
+      nav ul li {
+        width: 100%;
+        text-align: left;
+      }
     }
   </style>
 </head>
@@ -78,7 +148,8 @@
 <body>
   <header>
     <nav>
-      <ul>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+      <ul id="nav-links" class="collapsed">
         <li><a href="/amanulislam/index.html">About</a></li>
         <li><a href="/amanulislam/Curriculum Vitae.html">Curriculum Vitae</a></li>
         <li><a href="/amanulislam/Publications.html">Publications</a></li>
@@ -92,41 +163,29 @@
   </header>
 
   <main>
-    <section class="profile-info">
-      <p>
-        I actively contribute to academia and society through various professional activities and community services. Below is a summary of my key service contributions:
-      </p>
-
-      <h3>Professional Activities</h3>
-     <ul>
-      <li>Ex-Examiner (ICT), <i>Board of Intermediate and Secondary Education</i>, Dhaka.</li>
-      <li>Ex-Examiner (ICT), <i>Bangladesh Madrasa Education Board</i>, Dhaka.</li>
-      <li>Invited Reviewer, <i>Frontiers of Computer Science</i>, Springer.</li>
-      <li>Invited Reviewer, <i>Computing: Archives for Scientific Computing</i>, Springer.</li>
-      <li>Invited Reviewer, <i>Journal of Artificial Intelligence and Applications</i>, Bon View Publishing.</li>
-      <li>Invited Reviewer, <i>Computers in Human Behavior</i>, Elsevier.</li>
-      <li>Invited Reviewer, <i>Computers & Security</i>, Elsevier.</li>
-      <li>Invited Reviewer, <i>Neurocomputing</i>, Elsevier.</li>
-      <li>Invited Reviewer, <i>Knowledge-Based Systems</i>, Elsevier.</li>
-      <li>Invited Reviewer, <i>IET Computer Vision</i>, Wiley.</li>
-      <li>Invited Reviewer, <i>Journal of Computer Virology and Hacking Techniques</i>, Springer Nature.</li>
+    <h3>[Section Title]</h3>
+    <ul>
+      <li><span class="section-title">Example Item 1:</span> Description or content here.</li>
+      <li><span class="section-title">Example Item 2:</span> Description or content here.</li>
+      <li><span class="section-title">Example Item 3:</span> Description or content here.</li>
     </ul>
-
-      <h3>Professional Memberships</h3>
-      <ul>
-        <li>Member, Engineering Students Association of Bangladesh (ESAB).</li>
-        <li>Life-Long Blood Donor, Quantum Foundation Bangladesh.</li>
-        <li>Member, Help The People Foundation (HPF), Bangladesh.</li>
-      </ul>
-    </section>
   </main>
 
   <footer>
-    <p class="last-update">Last updated: January 2025 © Copyright 2025 Amanul Islam.</p>
+    <p>Last updated: January 2025 © Amanul Islam.</p>
   </footer>
 
   <!-- Highlight.js Script -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
+
+  <!-- Toggle Menu Script -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("nav-links");
+      menu.classList.toggle("expanded");
+      menu.classList.toggle("collapsed");
+    }
+  </script>
 </body>
 </html>
