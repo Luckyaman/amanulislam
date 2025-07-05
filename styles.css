@@ -1,116 +1,184 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    color: #333;
+/* style.css */
+
+* {
+  box-sizing: border-box;
 }
 
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* HEADER AND NAVIGATION */
 header {
-    background-color: #00509e;
-    padding: 10px 0;
+  background-color: #2e7d32;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-}
-
-nav ul li {
-    display: inline-block;
-    margin-right: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 10px;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
+/* MAIN */
 main {
-    max-width: 1000px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* PROFILE */
 .profile {
-    display: flex;
-    justify-content: space-between;
-}
-
-.profile-info {
-    flex: 2;
-    margin-right: 20px;
-    margin-left: 20px;
-}
-
-.profile-info h1 {
-    margin-top: 0;
-    color: #00509e;
-}
-
-.profile-info p {
-    margin: 10px 0;
-}
-
-.profile-info ul {
-    padding-left: 20px;
-}
-
-.profile-image {
-    flex: 1;
-    text-align: center;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
 }
 
 .profile-image img {
-    max-width: 100%;
-    border-radius: 50%;
+  max-width: 180px;
+  border-radius: 8px;
 }
 
-.news {
-    margin-top: 40px;
+.profile-info h1 {
+  color: #2e7d32;
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 
+.profile-info p {
+  margin: 6px 0;
+}
+
+.profile-info ul.interest {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 8px;
+}
+
+.profile-info ul.interest li {
+  margin-bottom: 5px;
+}
+
+/* NEWS SECTION */
 .news h2 {
-    color: #00509e;
-    margin-bottom: 20px;
+  color: #388e3c;
+  margin-top: 0;
+  margin-bottom: 15px;
 }
 
 .news-item {
-    margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .news-item .date {
-    font-weight: bold;
-    color: #555;
+  font-weight: bold;
+  color: #777;
+  margin-bottom: 4px;
 }
 
 .news-item a {
-    color: #00509e;
-    text-decoration: none;
+  color: #2e7d32;
+  text-decoration: none;
 }
 
 .news-item a:hover {
-    text-decoration: underline;
-}
-.interest{
-    color:green;
+  text-decoration: underline;
 }
 
+/* FOOTER */
 footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #00509e;
-    color: #fff;
-    margin-top: 40px;
+  text-align: center;
+  font-size: 0.9em;
+  color: white;
+  background-color: #2e7d32;
+  padding: 15px 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav {
+    max-width: 100%;
+    margin: 0;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin: 0 0 10px 0;
+    align-self: flex-start;
+    font-size: 28px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+
+  nav ul {
+    flex-direction: column;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: #2e7d32;
+  }
+
+  nav ul.expanded {
+    max-height: 500px;
+  }
+
+  nav ul.collapsed {
+    max-height: 0;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: left;
+  }
 }
