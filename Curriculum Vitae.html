@@ -5,25 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amanul Islam - Researcher and Academic</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+  <!-- Google Font: Fira Code -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
+
+  <!-- Highlight.js CSS -->
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
 
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
+      font-family: 'Fira Code', monospace;
       background-color: #f9f9f9;
       color: #333;
       line-height: 1.8;
     }
 
     header {
-      background-color: #218739; /* Green */
+      background-color: #004080;
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -31,7 +34,7 @@
 
     nav {
       max-width: 1000px;
-      margin: auto;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -41,20 +44,20 @@
 
     .menu-toggle {
       display: none;
+      font-size: 28px;
       background: none;
       border: none;
-      font-size: 28px;
       color: white;
       cursor: pointer;
     }
 
     nav ul {
       list-style: none;
-      padding: 0;
-      margin: 0;
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
+      padding: 0;
+      margin: 0;
     }
 
     nav ul li a {
@@ -69,17 +72,22 @@
     }
 
     main {
+      padding: 20px;
       max-width: 900px;
       margin: 20px auto;
-      background: white;
-      padding: 20px;
+      background-color: #fff;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     h3 {
-      color: #1a5e2e; /* Darker green */
+      color: #0059b3;
       margin-top: 20px;
+    }
+
+    .highlight {
+      color: #004080;
+      font-weight: bold;
     }
 
     p {
@@ -87,23 +95,20 @@
       margin-bottom: 15px;
     }
 
-    .highlight {
-      color: #218739; /* Green */
-      font-weight: bold;
-    }
-
     footer {
       text-align: center;
       font-size: 0.9em;
-      color: white;
-      background-color: #155b2b; /* Dark Green */
       padding: 15px 0;
+      color: #666;
+      background-color: #f1f1f1;
     }
 
+    /* Responsive Styles */
     @media (max-width: 768px) {
       nav {
         flex-direction: column;
         align-items: flex-start;
+        padding: 10px 15px;
       }
 
       .menu-toggle {
@@ -116,8 +121,8 @@
         width: 100%;
         max-height: 0;
         overflow: hidden;
+        background-color: #004080;
         transition: max-height 0.3s ease;
-        background-color: #218739; /* Green */
       }
 
       nav ul.expanded {
@@ -135,7 +140,6 @@
     }
   </style>
 </head>
-
 <body>
   <header>
     <nav>
@@ -156,56 +160,59 @@
   <main>
     <div class="profile-info">
       <p>
-        I am a dedicated researcher, academic, and software engineer with a strong background in computer science, cybersecurity, and machine learning.
-        Hailing from <span class="highlight">Munshigonj, Bangladesh</span>, I am currently pursuing a PhD in Security at the
-        <span class="highlight">University of Colorado Colorado Springs, USA</span>. My research focuses on advanced topics such as anomaly detection in 5G/6G networks
-        using Variational Autoencoders (VAE) and anonymous networking detection in cryptocurrency. My research interests span machine learning, deep learning,
+        I am a dedicated researcher, academic, and software engineer with a strong background in computer science, cybersecurity, and machine learning. 
+        Hailing from <span class="highlight">Munshigonj, Bangladesh</span>, I am currently pursuing a PhD in Security at the 
+        <span class="highlight">University of Colorado Colorado Springs, USA</span>. My research focuses on advanced topics such as anomaly detection in 5G/6G networks 
+        using Variational Autoencoders (VAE) and anonymous networking detection in cryptocurrency. My research interests span machine learning, deep learning, 
         cybersecurity, graphical authentication, and network security.
       </p>
 
       <h3>Academic Journey</h3>
       <p>
-        I began my academic journey with a Bachelor of Science in Information and Communication Technology from
-        <span class="highlight">The Millennium University, Bangladesh</span>, where I graduated with a CGPA of 3.66/4.0.
-        My passion for research was evident early on, with my undergraduate thesis focused on designing a network security system using IP tables.
-        I then completed a Master’s by Research in Computer Science at the <span class="highlight">University of Malaya, Malaysia</span>,
+        I began my academic journey with a Bachelor of Science in Information and Communication Technology from 
+        <span class="highlight">The Millennium University, Bangladesh</span>, where I graduated with a CGPA of 3.66/4.0. 
+        My passion for research was evident early on, with my undergraduate thesis focused on designing a network security system using IP tables. 
+        I then completed a Master’s by Research in Computer Science at the <span class="highlight">University of Malaya, Malaysia</span>, 
         where my thesis revolved around preventing shoulder-surfing attacks using a novel graphical authentication technique.
       </p>
 
       <h3>Research and Teaching Experience</h3>
       <p>
-        Throughout my academic career, I have gained substantial experience in both research and teaching.
-        I served as a Graduate Research Assistant at the University of Colorado Colorado Springs, where I worked on projects involving anomaly detection and cybersecurity.
-        Before that, I held a Research Assistant position at the University of Malaya, contributing to studies on tools for identifying emotions and personality traits,
+        Throughout my academic career, I have gained substantial experience in both research and teaching. 
+        I served as a Graduate Research Assistant at the University of Colorado Colorado Springs, where I worked on projects involving anomaly detection and cybersecurity. 
+        Before that, I held a Research Assistant position at the University of Malaya, contributing to studies on tools for identifying emotions and personality traits, 
         as well as graphical authentication techniques.
       </p>
+
       <p>
-        In addition to my research endeavors, I have extensive experience as a lecturer.
-        I have taught courses in Information and Communication Technology at multiple institutions in Bangladesh, including Serajabad Rana Shafiullah College,
-        Yunus Khan Memorial College, and Basudia Nesaria Islamia College. My teaching repertoire covers a wide range of topics,
+        In addition to my research endeavors, I have extensive experience as a lecturer. 
+        I have taught courses in Information and Communication Technology at multiple institutions in Bangladesh, including Serajabad Rana Shafiullah College, 
+        Yunus Khan Memorial College, and Basudia Nesaria Islamia College. My teaching repertoire covers a wide range of topics, 
         from digital logic and computer networks to web programming and database management.
       </p>
 
       <h3>Publications and Technical Expertise</h3>
       <p>
-        I have published several peer-reviewed journal articles and conference papers, including works on graphical password techniques,
-        the impact of 4IR technology, and phishing susceptibility. My research has appeared in reputable journals like
-        <span class="highlight">Frontiers of Computer Science</span> and <span class="highlight">Security Journal</span>.
+        I have published several peer-reviewed journal articles and conference papers, including works on graphical password techniques, 
+        the impact of 4IR technology, and phishing susceptibility. My research has appeared in reputable journals like 
+        <span class="highlight">Frontiers of Computer Science</span> and <span class="highlight">Security Journal</span>. 
         I have also authored three books focusing on information technology in financial services and e-banking.
       </p>
+
       <p>
-        My technical expertise spans various programming languages and technologies, including C, C++, Java, Python, PHP, and JavaScript.
+        My technical expertise spans various programming languages and technologies, including C, C++, Java, Python, PHP, and JavaScript. 
         I am also skilled in network administration and hold certifications like Cisco Certified Network Associate (CCNA) and Linux System Administration.
       </p>
 
       <h3>Professional Activities and Recognition</h3>
       <p>
-        My professional activities include serving as an invited reviewer for several journals and actively participating in community service through memberships in organizations like
+        My professional activities include serving as an invited reviewer for several journals and actively participating in community service through memberships in organizations like 
         the Engineering Students Association of Bangladesh (ESAB) and Quantum Foundation Bangladesh. My contributions to academia and industry reflect my commitment to advancing technology and education.
       </p>
+
       <p>
-        In my journey, I have been recognized with numerous awards and honors, including a Graduate Research Assistantship at the
-        <span class="highlight">University of Colorado Colorado Springs</span> and a Merit Scholarship during my undergraduate studies.
+        In my journey, I have been recognized with numerous awards and honors, including a Graduate Research Assistantship at the 
+        <span class="highlight">University of Colorado Colorado Springs</span> and a Merit Scholarship during my undergraduate studies. 
         My strong academic foundation, coupled with my passion for research and teaching, positions me as a promising figure in the fields of cybersecurity and machine learning.
       </p>
     </div>
