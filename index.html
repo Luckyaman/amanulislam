@@ -100,9 +100,7 @@
     .profile-info p {
       margin: 6px 0;
     }
-    /* .profile-info p {
-      margin-bottom: 16px;
-    } */
+
     .profile-info ul.interest {
       list-style-type: disc;
       padding-left: 20px;
@@ -147,24 +145,18 @@
     }
 
     /* Responsive styles */
-    /* @media (max-width: 768px) {
+    @media (max-width: 768px) {
       .menu-toggle {
         display: block;
-      } */
-
-    @media (max-width: 768px) {
-        nav {
-          max-width: 100%;
-          margin: 0;
-          padding: 10px 15px;
-          justify-content: flex-start; /* Align items to the start (left) */
-        }
-      
-        .menu-toggle {
-          margin-right: auto; /* Push it to left */
-        }
+        margin-right: auto; /* keep toggle left */
       }
 
+      nav {
+        max-width: 100%;
+        margin: 0;
+        padding: 10px 15px;
+        justify-content: flex-start; /* align items left */
+      }
 
       nav ul {
         flex-direction: column;
@@ -185,7 +177,7 @@
 
       nav ul li {
         width: 100%;
-        text-align:left;
+        text-align: left;
       }
     }
   </style>
@@ -218,7 +210,7 @@
         <p>PhD Student in Security</p>
         <p>University of Colorado Colorado Springs, USA</p>
         <p>aislam2@uccs.edu</p>
-        <br /> <br />
+        <br />
         <p style="text-align: justify;">
           I am a dedicated researcher, academic, and software engineer with a strong background in computer science, cybersecurity, and machine learning. Hailing from Munshigonj, Bangladesh, I am currently pursuing a <strong>PhD in Security at the University of Colorado Colorado Springs, USA</strong>. My research focuses on advanced topics such as anomaly detection in 5G/6G networks using Variational Autoencoders (VAE) and anonymous networking detection in cryptocurrency. My research interests span machine learning, deep learning, cybersecurity, graphical authentication, and network security.
         </p>
@@ -259,7 +251,7 @@
   </main>
 
   <footer>
-    <p>Last updated: January 2025 © Copyright 2025 Amanul Islam.</p>
+    <p>Last updated: July 2025 © Copyright 2025 Amanul Islam.</p>
   </footer>
 
   <!-- Highlight.js -->
