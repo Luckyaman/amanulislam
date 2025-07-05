@@ -2,82 +2,155 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Amanul Islam - Publications</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publications - Amanul Islam</title>
 
-  <!-- Google Fonts: Fira Code -->
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet"/>
-
+  <!-- Google Font: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
   <!-- Highlight.js CSS -->
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"/>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
 
   <style>
+    :root {
+      --main-color: #1b5e20;
+      --highlight-color: #1b5e20;
+      --text-color: #333;
+      --bg-color: #f9f9f9;
+    }
+
     body {
-      font-family: 'Fira Code', monospace;
-      line-height: 1.8;
+      font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
     }
+
     header {
-      background-color: #004080;
-      color: white;
-      padding: 10px 0;
+      background-color: var(--main-color);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
+
+    nav {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+    }
+
     nav ul {
       list-style: none;
-      margin: 0;
       padding: 0;
-      text-align: center;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
     }
-    nav ul li {
-      display: inline;
-      margin: 0 15px;
-    }
+
     nav ul li a {
       color: white;
       text-decoration: none;
       font-weight: bold;
+      padding: 10px;
     }
+
     nav ul li a:hover {
       text-decoration: underline;
     }
+
     main {
-      padding: 20px;
       max-width: 900px;
       margin: 20px auto;
-      background-color: #fff;
+      background: white;
+      padding: 20px;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
+
     h3 {
-      color: #0059b3;
+      color: var(--highlight-color);
       margin-top: 30px;
+      border-bottom: 2px solid #c8e6c9;
+      padding-bottom: 5px;
     }
+
     ul {
-      margin: 15px 0;
       padding-left: 20px;
     }
+
     ul li {
       margin-bottom: 15px;
     }
+
     .publication-title {
-      color: #004080;
       font-weight: bold;
+      color: var(--main-color);
     }
+
     .author-name {
-      color: #006600;
+      color: #2e7d32;
     }
+
     .journal-info {
       color: #666;
+      display: block;
+      font-size: 0.95em;
     }
-    .last-update {
+
+    footer {
       text-align: center;
       font-size: 0.9em;
+      color: white;
+      background-color: #2e7d32;
       padding: 15px 0;
-      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu-toggle {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        background-color: var(--main-color);
+      }
+
+      nav ul.expanded {
+        max-height: 500px;
+      }
+
+      nav ul.collapsed {
+        max-height: 0;
+      }
+
+      nav ul li {
+        width: 100%;
+        text-align: left;
+      }
     }
   </style>
 </head>
@@ -85,7 +158,8 @@
 <body>
   <header>
     <nav>
-      <ul>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+      <ul id="nav-links" class="collapsed">
         <li><a href="/amanulislam/index.html">About</a></li>
         <li><a href="/amanulislam/Curriculum Vitae.html">Curriculum Vitae</a></li>
         <li><a href="/amanulislam/Publications.html">Publications</a></li>
@@ -99,56 +173,63 @@
   </header>
 
   <main>
-    <div class="profile-info">
-      <h3>Books</h3>
-      <ul>
-        <li><span class="author-name">Amanul Islam</span>, <span class="publication-title">Information Technology in Financial Services</span>, Chatrabondu Publications, Dhaka, Bangladesh, 2012, pp. 378.</li>
-        <li><span class="author-name">Amanul Islam</span>, <span class="publication-title">E-Banking</span>, Chatrabondu Publications, Dhaka, Bangladesh, 2013, pp. 416.</li>
-        <li><span class="author-name">Amanul Islam</span>, <span class="publication-title">Information and Communication Technology in Financial Institutions (ICTFI)</span>, Chatrabondu Publications, Dhaka, Bangladesh, 2023, pp. 416.</li>
-      </ul>
+    <h3>Books</h3>
+    <ul>
+      <li><span class="author-name">Amanul Islam</span>, <span class="publication-title">Information Technology in Financial Services</span>, Chatrabondu Publications, 2012, pp. 378.</li>
+      <li><span class="author-name">Amanul Islam</span>, <span class="publication-title">E-Banking</span>, Chatrabondu Publications, 2013, pp. 416.</li>
+      <li><span class="author-name">Amanul Islam</span>, <span class="publication-title">ICT in Financial Institutions</span>, Chatrabondu Publications, 2023, pp. 416.</li>
+    </ul>
 
-      <h3>Peer-reviewed Journal Articles</h3>
-      <ul>
-        <li><span class="author-name">Por, L. Y., Ku, C. S., <b>Islam A.</b>, & Ang, T. F.</span>. <span class="publication-title">Graphical password: prevent shoulder-surfing attacks using digraph substitution rules.</span><br><span class="journal-info">Frontiers of Computer Science, 11, 1098-1108.</span></li>
-        <li><span class="author-name">Alsulaimani, B., & <b>Islam, A.</b></span>. <span class="publication-title">Impact of 4ir technology and its impact on the current deployment.</span><br><span class="journal-info">IJCSIT, 14(4), 53–67.</span></li>
-        <li><span class="author-name"><b>Islam, A.</b>, Othman, F., Sakib, N., & Babu, H. M. H.</span>. <span class="publication-title">Prevention of Shoulder-Surfing Attack Using Shifting Condition with the Digraph Substitution Rules.</span><br><span class="journal-info">Artificial Intelligence and Applications, 1(1), 58-68.</span></li>
-        <li><span class="author-name"><b>Islam, A.</b>, Md Mamunur Rashid, Fazidah Othman, Mohammed Golam Kaosar, and Lamia Islam</span>. <span class="publication-title">Identifying personality traits associated with phishing susceptibility.</span><br><span class="journal-info">Security Journal 38 (2025): 18.</span></li>
-        <li><span class="author-name"><b>Islam, A.</b>, Mohd Noor, N.F. & Abdul Rahman, S.</span>. <span class="publication-title">Systematic mapping study of tools to identify emotions and personality traits.</span><br><span class="journal-info">Discov Artif Intell 5, 58 (2025).</span></li>
-        <li><span class="author-name"><b>Islam, A.</b>, Sakib, N., Zhang, K., Wuthier, S., & Chang, S.-Y.</span>. <span class="publication-title">Anonymous Networking Detection in Cryptocurrency Using Network Fingerprinting and Machine Learning.</span><br><span class="journal-info">Electronics, 14(11), 2101.</span></li>
-        <li><span class="author-name">KR Katti, KK Katti, <b>Islam A</b></span>. <span class="publication-title">Exploring the Applications of Neural Turing Machines in NLP.</span><br><span class="journal-info">Neural Computing and Applications. (Under Review)</span></li>
-        <li><span class="author-name">KR Katti, KK Katti, <b>Islam A</b></span>. <span class="publication-title">A Study on Adversarial Attacks and Defenses for Neural Networks.</span><br><span class="journal-info">Neural Processing Letters. (Under Review)</span></li>
-        <li><span class="author-name">Rahman, M. M., Noor, N. F. M., Abdul Rahman, S. S., Muhamad, H., & <b>Islam, A.</b></span>. <span class="publication-title">Categorization of words and common phrases of Dark Triad Personality on social media.</span><br><span class="journal-info">Journal of Ambient Intelligence and Humanized Computing. (Under Review)</span></li>
-        <li><span class="author-name"><b>Islam A.</b>, & Othman, F.</span>. <span class="publication-title">Renewable Energy MicroGrid Power Forecasting: AI Techniques with Environmental Perspective.</span><br><span class="journal-info">(Preprint Available).</span></li>
-        <li><span class="author-name"><b>Islam A.</b>, & Rashid, M. M.</span>. <span class="publication-title">Cyberattack Detection Using Unsupervised Learning Techniques.</span><br><span class="journal-info">(Preprint Available).</span></li>
-      </ul>
+    <h3>Peer-reviewed Journal Articles</h3>
+    <ul>
+      <li><span class="author-name">Por, L. Y., Ku, C. S., <b>Islam A.</b>, & Ang, T. F.</span>. <span class="publication-title">Graphical password: prevent shoulder-surfing attacks using digraph substitution rules.</span> <span class="journal-info">Frontiers of Computer Science, 11, 1098–1108.</span></li>
+      <li><span class="author-name">Alsulaimani, B., & <b>Islam, A.</b></span>. <span class="publication-title">Impact of 4IR Technology and its Impact on Deployment.</span> <span class="journal-info">IJCSIT, 14(4), 53–67.</span></li>
+      <li><span class="author-name"><b>Islam, A.</b>, Othman, F., Sakib, N., & Babu, H. M. H.</span>. <span class="publication-title">Prevention of Shoulder-Surfing Attack Using Shifting Conditions.</span> <span class="journal-info">Artificial Intelligence and Applications, 1(1), 58–68.</span></li>
+      <li><span class="author-name"><b>Islam, A.</b>, Rashid, M. M., Othman, F., Kaosar, M. G., & Islam, L.</span>. <span class="publication-title">Identifying Personality Traits Associated with Phishing Susceptibility.</span> <span class="journal-info">Security Journal 38 (2025): 18.</span></li>
+      <li><span class="author-name"><b>Islam, A.</b>, Noor, N. F., & Abdul Rahman, S.</span>. <span class="publication-title">Systematic Mapping of Emotion and Personality Tools.</span> <span class="journal-info">Discover Artificial Intelligence, 5, 58 (2025).</span></li>
+      <li><span class="author-name"><b>Islam, A.</b>, Sakib, N., Zhang, K., Wuthier, S., & Chang, S.-Y.</span>. <span class="publication-title">Anonymous Networking Detection in Cryptocurrency.</span> <span class="journal-info">Electronics, 14(11), 2101.</span></li>
+      <li><span class="author-name">KR Katti, KK Katti, <b>Islam A.</b></span>. <span class="publication-title">Neural Turing Machines in NLP.</span> <span class="journal-info">Neural Computing and Applications. (Under Review)</span></li>
+      <li><span class="author-name">KR Katti, KK Katti, <b>Islam A.</b></span>. <span class="publication-title">Adversarial Attacks and Defenses for Neural Networks.</span> <span class="journal-info">Neural Processing Letters. (Under Review)</span></li>
+      <li><span class="author-name">Rahman, M. M., Noor, N. F., Abdul Rahman, S., Muhamad, H., & <b>Islam, A.</b></span>. <span class="publication-title">Dark Triad Personality on Social Media.</span> <span class="journal-info">Journal of Ambient Intelligence and Humanized Computing. (Under Review)</span></li>
+      <li><span class="author-name"><b>Islam A.</b>, & Othman, F.</span>. <span class="publication-title">Renewable Energy Microgrid Forecasting.</span> <span class="journal-info">(Preprint Available)</span></li>
+      <li><span class="author-name"><b>Islam A.</b>, & Rashid, M. M.</span>. <span class="publication-title">Cyberattack Detection Using Unsupervised Learning.</span> <span class="journal-info">(Preprint Available)</span></li>
+    </ul>
 
-      <h3>Peer-reviewed Conference Publications</h3>
-      <ul>
-        <li><span class="author-name"><b>Islam A.</b>, Por, L. Y., Othman, F., & Ku, C. S.</span>. <span class="publication-title">A review on recognition-based graphical password techniques.</span><br><span class="journal-info">ICCST 2018, Malaysia.</span></li>
-        <li><span class="author-name"><b>Islam A.</b>, Chang, S. Y., Kim, J., & Kim, J.</span>. <span class="publication-title">Anomaly Detection in 5G using Variational Autoencoders.</span><br><span class="journal-info">SVCC 2024, IEEE.</span></li>
-        <li><span class="author-name"><b>Islam A.</b>, N Sakib., K Zhang., S Wuthier., Chang S.</span>. <span class="publication-title">Network Fingerprinting Using ML for Anonymous Networking Detection.</span><br><span class="journal-info">CCNC-2024, Las Vegas, USA.</span></li>
-        <li><span class="author-name"><b>Islam A.</b>, S Purification., Chang S.</span>. <span class="publication-title">Anomaly Detection Against Fake Base Station Threat.</span><br><span class="journal-info">Submitted in IEEE MASS-2025.</span></li>
-        <li><span class="author-name">N Sakib., S Wuthier., <b>Islam A.</b>, Zhou X., Kim, J., Kim, I., Chang S.</span>. <span class="publication-title">Dynamic Beneficialness Prediction of P2P Crypto Connections.</span><br><span class="journal-info">Submitted in ICCCN-2025.</span></li>
-      </ul>
+    <h3>Peer-reviewed Conference Publications</h3>
+    <ul>
+      <li><span class="author-name"><b>Islam A.</b>, Por, L. Y., Othman, F., & Ku, C. S.</span>. <span class="publication-title">Recognition-based Graphical Password Techniques.</span> <span class="journal-info">ICCST 2018, Malaysia.</span></li>
+      <li><span class="author-name"><b>Islam A.</b>, Chang, S.-Y., Kim, J., & Kim, J.</span>. <span class="publication-title">Anomaly Detection in 5G using VAE.</span> <span class="journal-info">SVCC 2024, IEEE.</span></li>
+      <li><span class="author-name"><b>Islam A.</b>, Sakib, N., Zhang, K., Wuthier, S., Chang, S.</span>. <span class="publication-title">Network Fingerprinting Using ML.</span> <span class="journal-info">CCNC-2024, Las Vegas, USA.</span></li>
+      <li><span class="author-name"><b>Islam A.</b>, Purification, S., Chang, S.</span>. <span class="publication-title">Anomaly Detection Against Fake Base Station.</span> <span class="journal-info">Submitted in IEEE MASS-2025.</span></li>
+      <li><span class="author-name">Sakib, N., Wuthier, S., <b>Islam A.</b>, Zhou, X., Kim, J., Kim, I., Chang, S.</span>. <span class="publication-title">Dynamic Beneficialness Prediction in Crypto P2P.</span> <span class="journal-info">Submitted in ICCCN-2025.</span></li>
+    </ul>
 
-      <h3>Peer-reviewed Poster Publication</h3>
-      <ul>
-        <li><span class="author-name">K Zhang., <b>Islam A.</b>, Chang, S. Y.</span>. <span class="publication-title">Reinforcement Learning on Tor: Prioritizing Performance Compromises Anonymity.</span><br><span class="journal-info">SVCC-2025, San Francisco, USA.</span></li>
-      </ul>
+    <h3>Peer-reviewed Poster Publication</h3>
+    <ul>
+      <li><span class="author-name">Zhang, K., <b>Islam A.</b>, Chang, S.-Y.</span>. <span class="publication-title">Reinforcement Learning on Tor: Performance vs Anonymity.</span> <span class="journal-info">SVCC-2025, San Francisco, USA.</span></li>
+    </ul>
 
-      <h3>Peer-reviewed Book Chapter Publication</h3>
-      <ul>
-        <li><span class="author-name"><b>Islam A.</b>, Por, L.Y., Othman, F., Ku, C.S.</span>. <span class="publication-title">A Review on Recognition-Based Graphical Password Techniques.</span><br><span class="journal-info">Lecture Notes in Electrical Engineering, vol 481. Springer, Singapore.</span></li>
-      </ul>
-    </div>
+    <h3>Peer-reviewed Book Chapter</h3>
+    <ul>
+      <li><span class="author-name"><b>Islam A.</b>, Por, L.Y., Othman, F., Ku, C.S.</span>. <span class="publication-title">Recognition-Based Graphical Password Techniques.</span> <span class="journal-info">Lecture Notes in Electrical Engineering, vol. 481, Springer.</span></li>
+    </ul>
   </main>
 
   <footer>
-    <p class="last-update">Last updated: January 2025 © Copyright 2025 Amanul Islam.</p>
+    <p>Last updated: January 2025 © Amanul Islam.</p>
   </footer>
 
   <!-- Highlight.js Script -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
+
+  <!-- Toggle Menu Script -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("nav-links");
+      menu.classList.toggle("expanded");
+      menu.classList.toggle("collapsed");
+    }
+  </script>
 </body>
 </html>
