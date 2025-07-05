@@ -11,6 +11,13 @@
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
 
   <style>
+    :root {
+      --main-color: #1b5e20;
+      --highlight-color: #1b5e20;
+      --text-color: #333;
+      --bg-color: #f9f9f9;
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -19,13 +26,13 @@
       font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
+      background-color: var(--bg-color);
+      color: var(--text-color);
       line-height: 1.8;
     }
 
     header {
-      background-color: #004080;
+      background-color: var(--main-color);
       position: sticky;
       top: 0;
       z-index: 1000;
@@ -80,7 +87,7 @@
     }
 
     h3 {
-      color: #0059b3;
+      color: var(--highlight-color);
       margin-top: 20px;
     }
 
@@ -90,15 +97,15 @@
     }
 
     .highlight {
-      color: #004080;
+      color: var(--highlight-color);
       font-weight: bold;
     }
 
     footer {
       text-align: center;
       font-size: 0.9em;
-      color: #666;
-      background-color: #f1f1f1;
+      color: white;
+      background-color: var(--main-color);
       padding: 15px 0;
     }
 
@@ -119,7 +126,7 @@
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease;
-        background-color: #004080;
+        background-color: var(--main-color);
       }
 
       nav ul.expanded {
