@@ -1,236 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Amanul Islam - Researcher and Academic</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amanul Islam - Researcher and Academic</title>
+    <link rel="stylesheet" href="styles.css">
 
-  <!-- Google Font: Fira Code -->
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet" />
+    <!-- Google Fonts: Fira Code -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
 
-  <!-- Highlight.js CSS -->
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
+    <!-- Highlight.js CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Fira Code', monospace;
-      background-color: #f9f9f9;
-      color: #333;
-      line-height: 1.8;
-    }
-
-    header {
-      background-color: #004080;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      flex-wrap: wrap;
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 28px;
-      background: none;
-      border: none;
-      color: white;
-      cursor: pointer;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding: 0;
-      margin: 0;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 10px;
-    }
-
-    nav ul li a:hover {
-      text-decoration: underline;
-    }
-
-    main {
-      padding: 20px;
-      max-width: 900px;
-      margin: 20px auto;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    h3 {
-      color: #0059b3;
-      margin-top: 20px;
-    }
-
-    .highlight {
-      color: #004080;
-      font-weight: bold;
-    }
-
-    p {
-      text-align: justify;
-      margin-bottom: 15px;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.9em;
-      padding: 15px 0;
-      color: #666;
-      background-color: #f1f1f1;
-    }
-
-    /* Responsive Styles */
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 15px;
-      }
-
-      .menu-toggle {
-        display: block;
-        margin-bottom: 10px;
-      }
-
-      nav ul {
-        flex-direction: column;
-        width: 100%;
-        max-height: 0;
-        overflow: hidden;
-        background-color: #004080;
-        transition: max-height 0.3s ease;
-      }
-
-      nav ul.expanded {
-        max-height: 500px;
-      }
-
-      nav ul.collapsed {
-        max-height: 0;
-      }
-
-      nav ul li {
-        width: 100%;
-        text-align: left;
-      }
-    }
-  </style>
+    <!-- Inline CSS -->
+    <style>
+        body {
+            font-family: 'Fira Code', monospace;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #004080;
+            color: white;
+            padding: 10px 0;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 20px;
+            max-width: 900px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h3 {
+            color: #0059b3;
+            margin-top: 20px;
+        }
+        .highlight {
+            color: #004080;
+            font-weight: bold;
+        }
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        .last-update {
+            text-align: center;
+            font-size: 0.9em;
+            padding: 15px 0;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
-      <ul id="nav-links" class="collapsed">
-        <li><a href="/amanulislam/index.html">About</a></li>
-        <li><a href="/amanulislam/Curriculum Vitae.html">Curriculum Vitae</a></li>
-        <li><a href="/amanulislam/Publications.html">Publications</a></li>
-        <li><a href="/amanulislam/Teaching.html">Teaching</a></li>
-        <li><a href="/amanulislam/Service.html">Service</a></li>
-        <li><a href="/amanulislam/Projects.html">Projects</a></li>
-        <li><a href="/amanulislam/Education.html">Education</a></li>
-        <li><a href="/amanulislam/achievement.html">Achievements</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/amanulislam/index.html">About</a></li>
+                <li><a href="/amanulislam/Curriculum Vitae.html">Curriculum Vitae</a></li>
+                <li><a href="/amanulislam/Publications.html">Publications</a></li>
+                <li><a href="/amanulislam/Teaching.html">Teaching</a></li>
+                <li><a href="/amanulislam/Service.html">Service</a></li>
+                <li><a href="/amanulislam/Projects.html">Projects</a></li>
+                <li><a href="/amanulislam/Education.html">Education</a></li>
+                <li><a href="/amanulislam/achievement.html">Achievements</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <main>
-    <div class="profile-info">
-      <p>
-        I am a dedicated researcher, academic, and software engineer with a strong background in computer science, cybersecurity, and machine learning. 
-        Hailing from <span class="highlight">Munshigonj, Bangladesh</span>, I am currently pursuing a PhD in Security at the 
-        <span class="highlight">University of Colorado Colorado Springs, USA</span>. My research focuses on advanced topics such as anomaly detection in 5G/6G networks 
-        using Variational Autoencoders (VAE) and anonymous networking detection in cryptocurrency. My research interests span machine learning, deep learning, 
-        cybersecurity, graphical authentication, and network security.
-      </p>
+    <main>
+        <div class="profile-info">
+            <p>
+                I am a dedicated researcher, academic, and software engineer with a strong background in computer science, cybersecurity, and machine learning. 
+                Hailing from <span class="highlight">Munshigonj, Bangladesh</span>, I am currently pursuing a PhD in Security at the 
+                <span class="highlight">University of Colorado Colorado Springs, USA</span>. My research focuses on advanced topics such as anomaly detection in 5G/6G networks 
+                using Variational Autoencoders (VAE) and anonymous networking detection in cryptocurrency. My research interests span machine learning, deep learning, 
+                cybersecurity, graphical authentication, and network security.
+            </p>
+            <h3>Academic Journey</h3>
+            <p>
+                I began my academic journey with a Bachelor of Science in Information and Communication Technology from 
+                <span class="highlight">The Millennium University, Bangladesh</span>, where I graduated with a CGPA of 3.66/4.0. 
+                My passion for research was evident early on, with my undergraduate thesis focused on designing a network security system using IP tables. 
+                I then completed a Master’s by Research in Computer Science at the <span class="highlight">University of Malaya, Malaysia</span>, 
+                where my thesis revolved around preventing shoulder-surfing attacks using a novel graphical authentication technique.
+            </p>
+            <h3>Research and Teaching Experience</h3>
+            <p>
+                Throughout my academic career, I have gained substantial experience in both research and teaching. 
+                I served as a Graduate Research Assistant at the University of Colorado Colorado Springs, where I worked on projects involving anomaly detection and cybersecurity. 
+                Before that, I held a Research Assistant position at the University of Malaya, contributing to studies on tools for identifying emotions and personality traits, 
+                as well as graphical authentication techniques.
+            </p>
+            <p>
+                In addition to my research endeavors, I have extensive experience as a lecturer. 
+                I have taught courses in Information and Communication Technology at multiple institutions in Bangladesh, including Serajabad Rana Shafiullah College, 
+                Yunus Khan Memorial College, and Basudia Nesaria Islamia College. My teaching repertoire covers a wide range of topics, 
+                from digital logic and computer networks to web programming and database management.
+            </p>
+            <h3>Publications and Technical Expertise</h3>
+            <p>
+                I have published several peer-reviewed journal articles and conference papers, including works on graphical password techniques, 
+                the impact of 4IR technology, and phishing susceptibility. My research has appeared in reputable journals like 
+                <span class="highlight">Frontiers of Computer Science</span> and <span class="highlight">Security Journal</span>. 
+                I have also authored three books focusing on information technology in financial services and e-banking.
+            </p>
+            <p>
+                My technical expertise spans various programming languages and technologies, including C, C++, Java, Python, PHP, and JavaScript. 
+                I am also skilled in network administration and hold certifications like Cisco Certified Network Associate (CCNA) and Linux System Administration.
+            </p>
+            <h3>Professional Activities and Recognition</h3>
+            <p>
+                My professional activities include serving as an invited reviewer for several journals and actively participating in community service through memberships in organizations like 
+                the Engineering Students Association of Bangladesh (ESAB) and Quantum Foundation Bangladesh. My contributions to academia and industry reflect my commitment to advancing technology and education.
+            </p>
+            <p>
+                In my journey, I have been recognized with numerous awards and honors, including a Graduate Research Assistantship at the 
+                <span class="highlight">University of Colorado Colorado Springs</span> and a Merit Scholarship during my undergraduate studies. 
+                My strong academic foundation, coupled with my passion for research and teaching, positions me as a promising figure in the fields of cybersecurity and machine learning.
+            </p>
+        </div>
+    </main>
 
-      <h3>Academic Journey</h3>
-      <p>
-        I began my academic journey with a Bachelor of Science in Information and Communication Technology from 
-        <span class="highlight">The Millennium University, Bangladesh</span>, where I graduated with a CGPA of 3.66/4.0. 
-        My passion for research was evident early on, with my undergraduate thesis focused on designing a network security system using IP tables. 
-        I then completed a Master’s by Research in Computer Science at the <span class="highlight">University of Malaya, Malaysia</span>, 
-        where my thesis revolved around preventing shoulder-surfing attacks using a novel graphical authentication technique.
-      </p>
+    <footer>
+        <p class="last-update">Last updated: January 2025 © Copyright 2025 Amanul Islam.</p>
+    </footer>
 
-      <h3>Research and Teaching Experience</h3>
-      <p>
-        Throughout my academic career, I have gained substantial experience in both research and teaching. 
-        I served as a Graduate Research Assistant at the University of Colorado Colorado Springs, where I worked on projects involving anomaly detection and cybersecurity. 
-        Before that, I held a Research Assistant position at the University of Malaya, contributing to studies on tools for identifying emotions and personality traits, 
-        as well as graphical authentication techniques.
-      </p>
-
-      <p>
-        In addition to my research endeavors, I have extensive experience as a lecturer. 
-        I have taught courses in Information and Communication Technology at multiple institutions in Bangladesh, including Serajabad Rana Shafiullah College, 
-        Yunus Khan Memorial College, and Basudia Nesaria Islamia College. My teaching repertoire covers a wide range of topics, 
-        from digital logic and computer networks to web programming and database management.
-      </p>
-
-      <h3>Publications and Technical Expertise</h3>
-      <p>
-        I have published several peer-reviewed journal articles and conference papers, including works on graphical password techniques, 
-        the impact of 4IR technology, and phishing susceptibility. My research has appeared in reputable journals like 
-        <span class="highlight">Frontiers of Computer Science</span> and <span class="highlight">Security Journal</span>. 
-        I have also authored three books focusing on information technology in financial services and e-banking.
-      </p>
-
-      <p>
-        My technical expertise spans various programming languages and technologies, including C, C++, Java, Python, PHP, and JavaScript. 
-        I am also skilled in network administration and hold certifications like Cisco Certified Network Associate (CCNA) and Linux System Administration.
-      </p>
-
-      <h3>Professional Activities and Recognition</h3>
-      <p>
-        My professional activities include serving as an invited reviewer for several journals and actively participating in community service through memberships in organizations like 
-        the Engineering Students Association of Bangladesh (ESAB) and Quantum Foundation Bangladesh. My contributions to academia and industry reflect my commitment to advancing technology and education.
-      </p>
-
-      <p>
-        In my journey, I have been recognized with numerous awards and honors, including a Graduate Research Assistantship at the 
-        <span class="highlight">University of Colorado Colorado Springs</span> and a Merit Scholarship during my undergraduate studies. 
-        My strong academic foundation, coupled with my passion for research and teaching, positions me as a promising figure in the fields of cybersecurity and machine learning.
-      </p>
-    </div>
-  </main>
-
-  <footer>
-    <p>Last updated: January 2025 © Copyright 2025 Amanul Islam.</p>
-  </footer>
-
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-  <script>hljs.highlightAll();</script>
-
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("nav-links");
-      menu.classList.toggle("expanded");
-      menu.classList.toggle("collapsed");
-    }
-  </script>
+    <!-- Highlight.js Script -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </body>
 </html>
