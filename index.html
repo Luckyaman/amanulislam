@@ -146,29 +146,37 @@
 
     /* Responsive styles */
     @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-        margin-right: auto; /* keep toggle left */
-      }
-
       nav {
         max-width: 100%;
         margin: 0;
         padding: 10px 15px;
-        justify-content: flex-start; /* align items left */
+        display: flex;
+        flex-direction: column; /* stack toggle and menu vertically */
+        align-items: flex-start; /* align to left */
+      }
+
+      .menu-toggle {
+        display: block;
+        margin: 0 0 10px 0; /* space below toggle */
+        align-self: flex-start; /* keep left */
+        font-size: 28px;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
       }
 
       nav ul {
         flex-direction: column;
+        width: 100%;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease;
-        width: 100%;
         background-color: #2e7d32;
       }
 
       nav ul.expanded {
-        max-height: 500px;
+        max-height: 500px; /* enough height to show menu */
       }
 
       nav ul.collapsed {
@@ -186,7 +194,7 @@
 <body>
   <header>
     <nav>
-      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
       <ul id="nav-links" class="collapsed">
         <li><a href="/amanulislam/index.html">About</a></li>
         <li><a href="/amanulislam/Curriculum Vitae.html">Curriculum Vitae</a></li>
@@ -251,7 +259,7 @@
   </main>
 
   <footer>
-    <p>Last updated: July 2025 © Copyright 2025 Amanul Islam.</p>
+    <p>Last updated: January 2025 © Copyright 2025 Amanul Islam.</p>
   </footer>
 
   <!-- Highlight.js -->
