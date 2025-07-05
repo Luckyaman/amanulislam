@@ -1,136 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amanul Islam - Projects</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Google Fonts: Fira Code -->
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects - Amanul Islam</title>
 
-    <!-- Highlight.js CSS -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+  <!-- Google Font: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+  <!-- Highlight.js CSS -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css" />
 
-    <style>
-        body {
-            font-family: 'Fira Code', monospace;
-            line-height: 1.8;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        header {
-            background-color: #004080;
-            color: white;
-            padding: 10px 0;
-        }
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-        main {
-            padding: 20px;
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: #0059b3;
-            text-align: center;
-        }
-        ul {
-            margin: 15px 0;
-            padding-left: 20px;
-        }
-        ul li {
-            margin-bottom: 15px;
-        }
-        strong {
-            color: #004080;
-        }
-        p {
-            text-align: justify;
-        }
-        .last-update {
-            text-align: center;
-            font-size: 0.9em;
-            color: #666;
-            padding: 15px 0;
-        }
-    </style>
+  <style>
+    :root {
+      --main-color: #1b5e20;
+      --highlight-color: #1b5e20;
+      --text-color: #333;
+      --bg-color: #f9f9f9;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--main-color);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--highlight-color);
+      margin-bottom: 30px;
+    }
+
+    .project-entry {
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .project-title {
+      font-weight: bold;
+      font-size: 1.1em;
+      color: var(--main-color);
+    }
+
+    .project-details {
+      margin-top: 5px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: white;
+      background-color: #2e7d32;
+      padding: 15px 0;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu-toggle {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        background-color: var(--main-color);
+      }
+
+      nav ul.expanded {
+        max-height: 500px;
+      }
+
+      nav ul.collapsed {
+        max-height: 0;
+      }
+
+      nav ul li {
+        width: 100%;
+        text-align: left;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/amanulislam/index.html">About</a></li>
-                <li><a href="/amanulislam/Curriculum Vitae.html">Curriculum Vitae</a></li>
-                <li><a href="/amanulislam/Publications.html">Publications</a></li>
-                <li><a href="/amanulislam/Teaching.html">Teaching</a></li>
-                <li><a href="/amanulislam/Service.html">Service</a></li>
-                <li><a href="/amanulislam/Projects.html">Projects</a></li>
-                <li><a href="/amanulislam/Education.html">Education</a></li>
-                <li><a href="/amanulislam/achievement.html">Achievements</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <nav>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+      <ul id="nav-links" class="collapsed">
+        <li><a href="/amanulislam/index.html">About</a></li>
+        <li><a href="/amanulislam/Curriculum Vitae.html">Curriculum Vitae</a></li>
+        <li><a href="/amanulislam/Publications.html">Publications</a></li>
+        <li><a href="/amanulislam/Teaching.html">Teaching</a></li>
+        <li><a href="/amanulislam/Service.html">Service</a></li>
+        <li><a href="/amanulislam/Projects.html">Projects</a></li>
+        <li><a href="/amanulislam/Education.html">Education</a></li>
+        <li><a href="/amanulislam/achievement.html">Achievements</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <section class="profile">
-            <div class="profile-info">
-                <p>
-                    I have contributed to various research and development projects throughout my academic and professional career. 
-                    Below is a list of selected projects showcasing my expertise and interests:
-                </p>
-                <ul>
-                    <li>
-                        <strong>Anomaly Detection in 5G/6G Networks</strong><br>
-                        Conducted research as a Graduate Research Assistant at the University of Colorado Colorado Springs, focusing on anomaly detection using Variational Autoencoders (VAE) and addressing fake base station threats.
-                    </li>
-                    <li>
-                        <strong>Anonymous Networking Detection in Cryptocurrency</strong><br>
-                        Investigated methods to detect anonymous networking behaviors in cryptocurrency transactions to enhance network security.
-                    </li>
-                    <li>
-                        <strong>Graphical Authentication Techniques</strong><br>
-                        Developed a novel graphical authentication method to prevent shoulder-surfing attacks using digraph substitution rules and shifting conditions as part of my Master’s research at the University of Malaya.
-                    </li>
-                    <li>
-                        <strong>Systematic Mapping Study</strong><br>
-                        Conducted a systematic mapping study on tools to identify emotions and personality traits during my tenure as a Research Assistant at the University of Malaya.
-                    </li>
-                    <li>
-                        <strong>Network Security System Design</strong><br>
-                        Designed a network security system using IP Tables during my undergraduate studies at The Millennium University, Bangladesh.
-                    </li>
-                </ul>
-            </div>
-        </section>
-    </main>
+  <main>
+    <h2>Projects</h2>
 
-    <footer>
-        <p class="last-update">Last updated: January 2025 © Copyright 2025 Amanul Islam.</p>
-    </footer>
+    <div class="project-entry">
+      <div class="project-title">Anomaly Detection in 5G/6G Networks</div>
+      <div class="project-details">
+        Conducted research as a Graduate Research Assistant at the University of Colorado Colorado Springs, focusing on anomaly detection using Variational Autoencoders (VAE) and addressing fake base station threats.
+      </div>
+    </div>
 
-    <!-- Highlight.js Script -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
+    <div class="project-entry">
+      <div class="project-title">Anonymous Networking Detection in Cryptocurrency</div>
+      <div class="project-details">
+        Investigated methods to detect anonymous networking behaviors in cryptocurrency transactions to enhance network security.
+      </div>
+    </div>
+
+    <div class="project-entry">
+      <div class="project-title">Graphical Authentication Techniques</div>
+      <div class="project-details">
+        Developed a novel graphical authentication method to prevent shoulder-surfing attacks using digraph substitution rules and shifting conditions during Master's research at the University of Malaya.
+      </div>
+    </div>
+
+    <div class="project-entry">
+      <div class="project-title">Systematic Mapping Study</div>
+      <div class="project-details">
+        Conducted a systematic mapping study on tools for identifying emotions and personality traits while serving as a Research Assistant at the University of Malaya.
+      </div>
+    </div>
+
+    <div class="project-entry">
+      <div class="project-title">Network Security System Design</div>
+      <div class="project-details">
+        Designed a network security system using IP Tables during undergraduate studies at The Millennium University, Bangladesh.
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>Last updated: January 2025 © Amanul Islam.</p>
+  </footer>
+
+  <!-- Highlight.js Script -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+
+  <!-- Toggle Menu Script -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("nav-links");
+      menu.classList.toggle("expanded");
+      menu.classList.toggle("collapsed");
+    }
+  </script>
 </body>
 </html>
