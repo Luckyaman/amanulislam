@@ -102,11 +102,17 @@
     }
 
     footer {
-      text-align: center;
-      font-size: 0.9em;
-      color: white;
       background-color: var(--main-color);
       padding: 15px 0;
+      color: white;
+      font-size: 0.9em;
+    }
+
+    footer .container {
+      text-align: center;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
     @media (max-width: 768px) {
@@ -221,7 +227,9 @@
   </main>
 
   <footer>
-    <p>Last updated: January 2025 © Copyright 2025 Amanul Islam.</p>
+    <div class="container">
+      <p>Last updated: January 2025 © Copyright 2025 Amanul Islam.</p>
+    </div>
   </footer>
 
   <!-- Highlight.js Script -->
