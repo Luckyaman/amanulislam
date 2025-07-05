@@ -152,6 +152,20 @@
         display: block;
       }
 
+    @media (max-width: 768px) {
+        nav {
+          max-width: 100%;
+          margin: 0;
+          padding: 10px 15px;
+          justify-content: flex-start; /* Align items to the start (left) */
+        }
+      
+        .menu-toggle {
+          margin-right: auto; /* Push it to left */
+        }
+      }
+
+
       nav ul {
         flex-direction: column;
         max-height: 0;
