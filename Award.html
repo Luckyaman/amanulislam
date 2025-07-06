@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Awards & Honors - Amanul Islam</title>
+
+  <!-- Google Font: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"/>
+  <!-- Highlight.js CSS -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"/>
+
+  <style>
+    :root {
+      --main-color: #1b5e20;
+      --highlight-color: #1b5e20;
+      --text-color: #333;
+      --bg-color: #f9f9f9;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--main-color);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h3 {
+      color: var(--highlight-color);
+      margin-top: 30px;
+      border-bottom: 2px solid #c8e6c9;
+      padding-bottom: 5px;
+    }
+
+    h4 {
+      color: #388e3c;
+      margin-top: 25px;
+    }
+
+    p {
+      text-align: justify;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    ul li {
+      margin-bottom: 12px;
+    }
+
+    img.certificate {
+      max-width: 100%;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: white;
+      background-color: #2e7d32;
+      padding: 15px 0;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu-toggle {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        background-color: var(--main-color);
+      }
+
+      nav ul.expanded {
+        max-height: 500px;
+      }
+
+      nav ul.collapsed {
+        max-height: 0;
+      }
+
+      nav ul li {
+        width: 100%;
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+      <ul id="nav-links" class="collapsed">
+        <li><a href="/amanulislam/index.html">About</a></li>
+        <li><a href="/amanulislam/Curriculum Vitae.html">Curriculum Vitae</a></li>
+        <li><a href="/amanulislam/Publications.html">Publications</a></li>
+        <li><a href="/amanulislam/Teaching.html">Teaching</a></li>
+        <li><a href="/amanulislam/Service.html">Service</a></li>
+        <li><a href="/amanulislam/Projects.html">Projects</a></li>
+        <li><a href="/amanulislam/Education.html">Education</a></li>
+        <li><a href="/amanulislam/achievement.html">Achievements</a></li>
+        <li><a href="/amanulislam/Award.html">Achievements</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h3>Honors & Awards</h3>
+
+    <h4>Mentored Doctoral Fellowship</h4>
+    <p>
+      <strong>Issued by:</strong> University of Colorado Colorado Springs · April 2025<br>
+      I was awarded the Mentored Doctoral Fellowship in recognition of my outstanding research contributions and potential in cybersecurity research.
+    </p>
+
+    <h4>Merit Scholarship</h4>
+    <p>
+      <strong>Issued by:</strong> The Millennium University · October 2007<br>
+      Awarded a full tuition waiver for four years in recognition of academic excellence and consistent high performance throughout the undergraduate program.
+    </p>
+
+    <h3>Freelance Recognition</h3>
+
+    <h4>Certificate of Freelance Earnings</h4>
+    <p>
+      Before starting my PhD in Security at UCCS in Fall 2024, I worked as a freelancer on Upwork. This certificate from Upwork Global Inc. confirms my earnings as an independent contractor, providing virtual and technical services. From October 2023 to July 2024, I earned $2,400 USD, reflecting my professionalism and reliability. Freelancing strengthened my skills and prepared me for research. I ended freelancing to fully focus on my PhD in cybersecurity.
+    </p>
+    <img src="images/upwork_certificate.jpg" alt="Upwork Freelance Earnings Certificate" class="certificate"/>
+
+    <h4>Virtual Assistant Experience</h4>
+    <p>
+      <strong>Role:</strong> Virtual Assistant (Part-time)<br>
+      <strong>Company:</strong> Upwork · Sep 2022 – Jul 2024 · 1 yr 11 mos<br>
+      <strong>Location:</strong> Remote · Palo Alto, California, United States
+    </p>
+    <p>
+      ✅ 7 years of experience as a VA ✔️Academic & Business Research ✔️Website Development & Maintenance ✔️Social Media Management ✔️Email Management ✔️Project Management ✔️Schedule meetings ✔️Admin Tasks
+    </p>
+  </main>
+
+  <footer>
+    <p>Last updated: July 2025 © Amanul Islam.</p>
+  </footer>
+
+  <!-- Highlight.js Script -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+
+  <!-- Toggle Menu Script -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("nav-links");
+      menu.classList.toggle("expanded");
+      menu.classList.toggle("collapsed");
+    }
+  </script>
+</body>
+</html>
