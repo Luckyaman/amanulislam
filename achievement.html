@@ -1,133 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amanul Islam - Achievements</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Achievements - Amanul Islam</title>
 
-    <!-- Google Fonts: Fira Code -->
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+  <!-- Google Font: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"/>
+  <!-- Highlight.js CSS -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"/>
 
-    <!-- Highlight.js CSS -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+  <style>
+    :root {
+      --main-color: #1b5e20;
+      --highlight-color: #1b5e20;
+      --text-color: #333;
+      --bg-color: #f9f9f9;
+    }
 
-    <style>
-        body {
-            font-family: 'Fira Code', monospace;
-            line-height: 1.8;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        header {
-            background-color: #004080;
-            color: white;
-            padding: 10px 0;
-        }
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-        main {
-            padding: 20px;
-            max-width: 900px;
-            margin: 20px auto;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            color: #0059b3;
-            margin-top: 20px;
-        }
-        .achievement {
-            margin-bottom: 40px;
-            text-align: justify;
-        }
-        .achievement img {
-            max-width: 100%;
-            height: auto;
-            border: 1px solid #ccc;
-            margin-top: 10px;
-        }
-        .last-update {
-            text-align: center;
-            font-size: 0.9em;
-            padding: 15px 0;
-            color: #666;
-        }
-    </style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--main-color);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h3 {
+      color: var(--highlight-color);
+      margin-top: 30px;
+      border-bottom: 2px solid #c8e6c9;
+      padding-bottom: 5px;
+    }
+
+    p {
+      text-align: justify;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    ul li {
+      margin-bottom: 12px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+      margin: 10px 0;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: white;
+      background-color: #2e7d32;
+      padding: 15px 0;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu-toggle {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        background-color: var(--main-color);
+      }
+
+      nav ul.expanded {
+        max-height: 500px;
+      }
+
+      nav ul.collapsed {
+        max-height: 0;
+      }
+
+      nav ul li {
+        width: 100%;
+        text-align: left;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/amanulislam/index.html">About</a></li>
-                <li><a href="/amanulislam/Curriculum Vitae.html">Curriculum Vitae</a></li>
-                <li><a href="/amanulislam/Publications.html">Publications</a></li>
-                <li><a href="/amanulislam/Teaching.html">Teaching</a></li>
-                <li><a href="/amanulislam/Service.html">Service</a></li>
-                <li><a href="/amanulislam/Projects.html">Projects</a></li>
-                <li><a href="/amanulislam/Education.html">Education</a></li>
-                <li><a href="/amanulislam/achievement.html">Achievements</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <nav>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+      <ul id="nav-links" class="collapsed">
+        <li><a href="/amanulislam/index.html">About</a></li>
+        <li><a href="/amanulislam/Curriculum Vitae.html">Curriculum Vitae</a></li>
+        <li><a href="/amanulislam/Publications.html">Publications</a></li>
+        <li><a href="/amanulislam/Teaching.html">Teaching</a></li>
+        <li><a href="/amanulislam/Service.html">Service</a></li>
+        <li><a href="/amanulislam/Projects.html">Projects</a></li>
+        <li><a href="/amanulislam/Education.html">Education</a></li>
+        <li><a href="/amanulislam/achievement.html">Achievements</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <h2>Review Recognition Achievements</h2>
+  <main>
+    <p>
+      I have had the privilege of contributing to the peer-review process of several prestigious journals. Below is a list of certificates recognizing my role as a reviewer, which reflects my commitment to academic excellence and maintaining research integrity.
+    </p>
 
-        <div class="achievement">
-          <p font>
-              In December 2023, I received a Certificate of Reviewing from <strong>Computers in Human Behavior</strong>, an Elsevier journal. This recognition highlights my contribution to the peer-review process by evaluating a submitted manuscript, reinforcing my dedication to academic excellence and scientific integrity.
-          </p>
-          <img src="images/Certificate_CHB_Recognised.jpg" alt="Certificate from Computers in Human Behavior" style="max-width:100%; height:auto;">
-        </div>
-        <div class="achievement">
-            <p>
-                In June 2025, I was recognized by the prestigious Elsevier journal <strong>Computers & Security</strong> for reviewing a manuscript. This certificate highlights my active participation in cybersecurity research and my service as a reviewer for top-tier journals.
-            </p>
-            <img src="images/Certificate_COSE_Recognised.jpg" alt="Certificate from Computers & Security">
-        </div>
-        
-        <div class="achievement">
-          <p>
-              In July 2025, I was honored with a Certificate of Reviewing from <strong>Neurocomputing</strong>, an Elsevier journal. This acknowledgment reflects my active role in supporting the peer-review system and upholding the standards of high-quality research within the field.
-          </p>
-          <img src="images/Certificate_NCOM_Recognised.jpg" alt="Certificate from Neurocomputing" style="max-width:100%; height:auto;">
-        </div>
+    <h3>Review Recognitions</h3>
+    <ul>
+      <li>
+        Certificate of Reviewing from <strong>Computers in Human Behavior</strong> (Elsevier), awarded in December 2023.
+      </li>
+      <li>
+        Certificate of Reviewing from <strong>Computers & Security</strong> (Elsevier), awarded in June 2025.
+      </li>
+      <li>
+        Certificate of Reviewing from <strong>Neurocomputing</strong> (Elsevier), awarded in July 2025.
+      </li>
+      <li>
+        Certificate of Reviewing from <strong>Knowledge-Based Systems</strong> (Elsevier), awarded in July 2025.
+      </li>
+    </ul>
 
-        <div class="achievement">
-            <p>
-                In July 2025, I received a Certificate of Reviewing  from <strong>Knowledge-Based Systems</strong>, an Elsevier journal. This award acknowledges my contribution in reviewing a research paper, reflecting my engagement with the academic peer-review process and my commitment to maintaining research quality.
-            </p>
-            <img src="images/Certificate_KNOSYS_Recognised.jpg" alt="Certificate from Knowledge-Based Systems">
-        </div>
+    <h3>Certificate Images</h3>
+    <ul>
+      <li>
+        <strong>Computers in Human Behavior</strong><br>
+        <img src="images/Certificate_CHB_Recognised.jpg" alt="Certificate from Computers in Human Behavior">
+      </li>
+      <li>
+        <strong>Computers & Security</strong><br>
+        <img src="images/Certificate_COSE_Recognised.jpg" alt="Certificate from Computers & Security">
+      </li>
+      <li>
+        <strong>Neurocomputing</strong><br>
+        <img src="images/Certificate_NCOM_Recognised.jpg" alt="Certificate from Neurocomputing">
+      </li>
+      <li>
+        <strong>Knowledge-Based Systems</strong><br>
+        <img src="images/Certificate_KNOSYS_Recognised.jpg" alt="Certificate from Knowledge-Based Systems">
+      </li>
+    </ul>
+  </main>
 
-    </main>
+  <footer>
+    <p>Last updated: July 2025 © Amanul Islam.</p>
+  </footer>
 
-    <footer>
-        <p class="last-update">Last updated: July 2025 © Copyright 2025 Amanul Islam.</p>
-    </footer>
+  <!-- Highlight.js Script -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
 
-    <!-- Highlight.js Script -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
+  <!-- Toggle Menu Script -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("nav-links");
+      menu.classList.toggle("expanded");
+      menu.classList.toggle("collapsed");
+    }
+  </script>
 </body>
 </html>
