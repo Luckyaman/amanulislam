@@ -3,78 +3,149 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Amanul Islam - Teaching</title>
-  <link rel="stylesheet" href="styles.css"/>
+  <title>Teaching - Amanul Islam</title>
 
-  <!-- Google Fonts: Fira Code -->
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet"/>
-
+  <!-- Google Font: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"/>
   <!-- Highlight.js CSS -->
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css"/>
 
   <style>
+    :root {
+      --main-color: #1b5e20;
+      --highlight-color: #1b5e20;
+      --text-color: #333;
+      --bg-color: #f9f9f9;
+    }
+
     body {
-      font-family: 'Fira Code', monospace;
-      line-height: 1.8;
+      font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
     }
+
     header {
-      background-color: #004080;
-      color: white;
-      padding: 10px 0;
+      background-color: var(--main-color);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
+
+    nav {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+    }
+
     nav ul {
       list-style: none;
-      margin: 0;
       padding: 0;
-      text-align: center;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
     }
-    nav ul li {
-      display: inline;
-      margin: 0 15px;
-    }
+
     nav ul li a {
       color: white;
       text-decoration: none;
       font-weight: bold;
+      padding: 10px;
     }
+
     nav ul li a:hover {
       text-decoration: underline;
     }
+
     main {
-      padding: 20px;
       max-width: 900px;
       margin: 20px auto;
-      background-color: #fff;
+      background: white;
+      padding: 20px;
       border-radius: 8px;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
-    h1 {
-      color: #004080;
-      text-align: center;
-    }
-    h2 {
-      color: #0059b3;
+
+    h3 {
+      color: var(--highlight-color);
       margin-top: 30px;
+      border-bottom: 2px solid #c8e6c9;
+      padding-bottom: 5px;
     }
+
+    h4 {
+      color: #388e3c;
+      margin-top: 25px;
+    }
+
     p {
       text-align: justify;
     }
+
     ul {
-      margin: 15px 0;
       padding-left: 20px;
+      margin-top: 10px;
     }
+
     ul li {
       margin-bottom: 12px;
     }
-    .last-update {
+
+    footer {
       text-align: center;
       font-size: 0.9em;
+      color: white;
+      background-color: #2e7d32;
       padding: 15px 0;
-      color: #666;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .menu-toggle {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        background-color: var(--main-color);
+      }
+
+      nav ul.expanded {
+        max-height: 500px;
+      }
+
+      nav ul.collapsed {
+        max-height: 0;
+      }
+
+      nav ul li {
+        width: 100%;
+        text-align: left;
+      }
     }
   </style>
 </head>
@@ -82,7 +153,8 @@
 <body>
   <header>
     <nav>
-      <ul>
+      <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+      <ul id="nav-links" class="collapsed">
         <li><a href="/amanulislam/index.html">About</a></li>
         <li><a href="/amanulislam/Curriculum Vitae.html">Curriculum Vitae</a></li>
         <li><a href="/amanulislam/Publications.html">Publications</a></li>
@@ -95,55 +167,61 @@
   </header>
 
   <main>
-    <section class="profile-info">
-      <p>
-        I have a rich background in teaching, with extensive experience in both theoretical and practical classes, as well as course curriculum development. Below is a summary of my teaching experience and the courses I have conducted:
-      </p>
+    <p>
+      I have a rich background in teaching, with extensive experience in both theoretical and practical classes, as well as course curriculum development. Below is a summary of my teaching experience and the courses I have conducted:
+    </p>
 
-      <h2>Teaching Experience</h2>
-      <ul>
-        <li>
-          <strong>Lecturer in Information and Communication Technology</strong><br>
-          Basudia Nesaria Islamia College (BNIC), Louhajong, Munshigonj, Bangladesh<br>
-          <em>June 2023 - July 2024</em><br>
-          Roles: Conducted theory and lab classes, and developed course curriculums.
-        </li>
-        <li>
-          <strong>Lecturer in Information and Communication Technology</strong><br>
-          Yunus Khan Memorial College (YKMC), Louhajong, Munshigonj, Bangladesh<br>
-          <em>December 2020 - May 2023</em><br>
-          Roles: Conducted theory and lab classes, and developed course curriculums.
-        </li>
-        <li>
-          <strong>Lecturer in Information and Communication Technology</strong><br>
-          Serajabad Rana Shafiullah College (SRSC), Tongibari, Munshigonj, Bangladesh<br>
-          <em>January 2018 - November 2020</em> and <em>September 2013 - September 2015</em><br>
-          Roles: Conducted theory and lab classes, and developed course curriculums.
-        </li>
-      </ul>
+    <h3>Teaching Experience</h3>
+    <ul>
+      <li>
+        <strong>Lecturer in Information and Communication Technology</strong><br>
+        Basudia Nesaria Islamia College (BNIC), Louhajong, Munshigonj, Bangladesh<br>
+        <em>June 2023 – July 2024</em><br>
+        Roles: Conducted theory and lab classes, and developed course curriculums.
+      </li>
+      <li>
+        <strong>Lecturer in Information and Communication Technology</strong><br>
+        Yunus Khan Memorial College (YKMC), Louhajong, Munshigonj, Bangladesh<br>
+        <em>December 2020 – May 2023</em><br>
+        Roles: Conducted theory and lab classes, and developed course curriculums.
+      </li>
+      <li>
+        <strong>Lecturer in Information and Communication Technology</strong><br>
+        Serajabad Rana Shafiullah College (SRSC), Tongibari, Munshigonj, Bangladesh<br>
+        <em>January 2018 – November 2020</em> and <em>September 2013 – September 2015</em><br>
+        Roles: Conducted theory and lab classes, and developed course curriculums.
+      </li>
+    </ul>
 
-      <h2>Courses Conducted</h2>
-      <ul>
-        <li>Introduction to Internet and Web Technologies</li>
-        <li>Digital Logic and Number System</li>
-        <li>Computer Network</li>
-        <li>Data and Mobile Communication</li>
-        <li>C Programming</li>
-        <li>Object-Oriented Programming</li>
-        <li>Web Programming</li>
-        <li>Data Structure & Algorithm</li>
-        <li>Graph Theory</li>
-        <li>Database Management System</li>
-      </ul>
-    </section>
+    <h3>Courses Conducted</h3>
+    <ul>
+      <li>Introduction to Internet and Web Technologies</li>
+      <li>Digital Logic and Number System</li>
+      <li>Computer Network</li>
+      <li>Data and Mobile Communication</li>
+      <li>C Programming</li>
+      <li>Object-Oriented Programming</li>
+      <li>Web Programming</li>
+      <li>Data Structure & Algorithm</li>
+      <li>Database Management System</li>
+    </ul>
   </main>
 
   <footer>
-    <p class="last-update">Last updated: January 2025 © Copyright 2025 Amanul Islam.</p>
+    <p>Last updated: July 2025 © Amanul Islam.</p>
   </footer>
 
   <!-- Highlight.js Script -->
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
+
+  <!-- Toggle Menu Script -->
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("nav-links");
+      menu.classList.toggle("expanded");
+      menu.classList.toggle("collapsed");
+    }
+  </script>
 </body>
 </html>
